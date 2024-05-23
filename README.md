@@ -1,27 +1,116 @@
-# React + TypeScript + Vite
+# React App with Vite, TypeScript, and Azure AD Authentication
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React application bootstrapped with Vite and written in TypeScript. It demonstrates how to implement Azure Active Directory (Azure AD) for authentication and conditional rendering of components based on user roles. Additionally, the APIs in the application are protected and accessible only by admin users.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Azure AD Authentication**: Secure authentication using Azure AD.
+- **Role-Based Access Control**: Conditional rendering of components based on user roles.
+- **Admin Protected APIs**: APIs accessible only by admin users.
+- **Modern Development Setup**: Powered by Vite for fast development and TypeScript for type safety.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting Started
 
-- Configure the top-level `parserOptions` property like this:
+Follow these instructions to set up and run the project on your local machine.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+### Prerequisites
+
+- Node.js (>=14.x)
+- npm (>=6.x)
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/your-username/your-repo-name.git
+    cd your-repo-name
+    ```
+
+2. Install the dependencies:
+
+    ```bash
+    npm install
+    ```
+
+### Configuration
+
+
+1. Create a `.env` file in the root of the project and add your Azure AD configuration:
+
+    ```env
+    VITE_APP_APP_VERSION=1.0.0
+    VITE_APP_NAME=React-app
+
+    # DEV
+    VITE_APP_APP_NAME=
+    VITE_APP_FUNC_API_URL=
+    VITE_APP_APP_CLIENT_ID=
+    VITE_APP_AZURE_TENANT_ID=
+    # VITE_APP_REDIRECT_URI=
+    VITE_APP_REDIRECT_URI=
+    VITE_APP_FUNC_EXPOSED_API=
+    VITE_APP_URL=
+    ```
+
+### Running the App
+
+1. Start the development server:
+
+    ```bash
+    npm run dev
+    ```
+
+2. Open your browser and navigate to `http://localhost:3000`.
+
+## Project Structure
+
+Here's an overview of the project's structure:
+
+```
+├── public
+│   └── index.html
+├── src
+│   ├── __redux
+│   │   └── ...
+│   ├── _metronic
+│   │   └── ...
+│   ├── app
+│   │   ├── api
+│   │   │   └── ...
+│   │   ├── components
+│   │   │   └── ...
+│   │   ├── constants
+│   │   │   └── ...
+│   │   ├── modules
+│   │   │   └── ...
+│   │   ├── pages
+│   │   │   └── ...
+│   │   ├── routing
+│   │   │   └── ...
+│   │   └── ...
+│   ├── App.tsx
+│   ├── store.ts
+│   ├── main.tsx
+│   ├── msal-config.tsx
+│   └── vite-env.d.ts
+├── .env
+├── .eslintrc.cjs
+├── .eslintignore
+├── .gitignore
+├── deploy.mjs
+├── index
+
+### Configuration (continued)
+
+```
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── README.md
+│   ├── tsconfig.json
+│   ├── tsconfig.node.json
+│   └── vite.config.ts
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list

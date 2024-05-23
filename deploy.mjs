@@ -8,7 +8,7 @@ const ENV = "dev";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const resourceGroupName = "test";
 const location = "eastus";
-const storageAccountName = `Infotechtionreactapp${ENV}`;
+const storageAccountName = `infotechtion${ENV}`;
 const buildDirectoryPath = join(__dirname, "dist");
 
 const checkUser = () => {
