@@ -143,8 +143,8 @@ const enableStaticWebsite = () => {
 const uploadBuildFiles = () => {
   return new Promise((resolve, reject) => {
     console.log("Uploading build files to $web container...");
-    const command = `az storage blob upload-batch -s ${buildDirectoryPath} -d '$web' --account-name ${storageAccountName}`;
-    // const command = `az storage blob upload-batch -s ${buildDirectoryPath} -d '$web' --account-name ${storageAccountName} --overwrite`;
+    // const command = `az storage blob upload-batch -s ${buildDirectoryPath} -d '$web' --account-name ${storageAccountName}`;
+    const command = `az storage blob upload-batch -s ${buildDirectoryPath} -d '$web' --account-name ${storageAccountName} --overwrite`;
     exec(command, (error, stdout, stderr) => {
       if (error) {
         console.error(`Error: ${error.message}`);

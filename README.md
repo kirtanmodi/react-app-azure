@@ -1,7 +1,6 @@
 # React App with Vite, TypeScript, and Azure AD Authentication
 
-This project is a React application bootstrapped with Vite and written in TypeScript. It demonstrates how to implement Azure Active Directory (Azure AD) for authentication and conditional rendering of components based on user roles. Additionally, the APIs in the application are protected and accessible only by admin users.
-
+This project is a React application bootstrapped with Vite and written in TypeScript. It uses libraries like MUI and Bootstrap for styling. It demonstrates how to implement Azure Active Directory (Azure AD) for authentication and conditional rendering of components based on user roles. Additionally, the APIs in the application are protected and accessible only by admin users.
 
 ## Features
 
@@ -16,7 +15,7 @@ Follow these instructions to set up and run the project on your local machine.
 
 ### Prerequisites
 
-- Node.js (>=14.x)
+- Node.js (>=18.x)
 - npm (>=6.x)
 
 ### Installation
@@ -24,8 +23,8 @@ Follow these instructions to set up and run the project on your local machine.
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
-    cd your-repo-name
+    git clone https://github.com/kirtanmodi/react-app-azure
+    cd react-app-azure
     ```
 
 2. Install the dependencies:
@@ -36,7 +35,6 @@ Follow these instructions to set up and run the project on your local machine.
 
 ### Configuration
 
-
 1. Create a `.env` file in the root of the project and add your Azure AD configuration:
 
     ```env
@@ -44,14 +42,11 @@ Follow these instructions to set up and run the project on your local machine.
     VITE_APP_NAME=React-app
 
     # DEV
-    VITE_APP_APP_NAME=
-    VITE_APP_FUNC_API_URL=
-    VITE_APP_APP_CLIENT_ID=
-    VITE_APP_AZURE_TENANT_ID=
-    # VITE_APP_REDIRECT_URI=
-    VITE_APP_REDIRECT_URI=
-    VITE_APP_FUNC_EXPOSED_API=
-    VITE_APP_URL=
+    VITE_APP_FUNC_API_URL=<Your Function API URL>
+    VITE_APP_APP_CLIENT_ID=<Your Azure AD Client ID>
+    VITE_APP_AZURE_TENANT_ID=<Your Azure Tenant ID>
+    VITE_APP_REDIRECT_URI=<Your Redirect URI>
+    VITE_APP_FUNC_EXPOSED_API=<Your Exposed API>
     ```
 
 ### Running the App
@@ -100,17 +95,18 @@ Here's an overview of the project's structure:
 ├── .eslintignore
 ├── .gitignore
 ├── deploy.mjs
-├── index
-
-### Configuration (continued)
-
+├── index.ts
 ```
-│   ├── index.html
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── README.md
-│   ├── tsconfig.json
-│   ├── tsconfig.node.json
-│   └── vite.config.ts
-```
+
+## API Integration
+
+All APIs are deployed on Azure Functions and are protected to be accessible only by admin users.
+
+## Contribution Guidelines
+
+### How to Contribute
+
+- Fork the repository.
+- Create a branch for the feature that you are adding.
+- Create a pull request with your branch.
 
